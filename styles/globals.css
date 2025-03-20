@@ -5,14 +5,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   body {
-    @apply text-gray-800 bg-gray-50;
+    @apply text-gray-800 bg-neutral-50;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-secondary;
+    @apply font-bold text-secondary font-heading;
   }
 }
 
@@ -21,19 +23,59 @@
     @apply px-4 mx-auto max-w-7xl;
   }
   
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
   .btn {
-    @apply px-6 py-3 font-medium text-white rounded-md transition-all duration-300 ease-in-out;
+    @apply px-6 py-3 font-medium text-white rounded-xl shadow-soft-md transition-all duration-300 ease-in-out inline-flex items-center justify-center;
   }
   
   .btn-primary {
-    @apply btn bg-primary hover:bg-orange-700;
+    @apply btn bg-primary hover:bg-orange-600 hover:shadow-lg hover:-translate-y-1;
   }
   
   .btn-accent {
-    @apply btn bg-accent hover:bg-red-700;
+    @apply btn bg-accent hover:bg-red-600 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white;
   }
   
   .form-input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white shadow-sm;
+  }
+  
+  .card {
+    @apply bg-white p-6 rounded-xl shadow-soft-md border border-gray-100 hover:shadow-soft-xl transition-all duration-300;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary/10 text-primary;
+  }
+  
+  .badge-accent {
+    @apply badge bg-accent/10 text-accent;
+  }
+  
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold leading-tight;
+  }
+  
+  .heading-sm {
+    @apply text-xl md:text-2xl font-bold leading-tight;
   }
 } 
