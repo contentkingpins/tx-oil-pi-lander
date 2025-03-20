@@ -1,14 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Gradient */}
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
-          <div className="absolute inset-0 bg-gradient-to-b from-secondary/80 to-secondary/60 backdrop-blur-sm"></div>
-          <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1586423702505-b13505519074')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary to-secondary/80"></div>
         </div>
       </div>
 

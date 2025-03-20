@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 type FormInputs = {
-  // Contact Information
+  // Contact Information (now step 3)
   name: string;
   phone: string;
   email: string;
   
-  // Visible User-Facing Questions
+  // Visible User-Facing Questions (now steps 1-2)
   whatHappened: string;
   whenAndWhere: {
     date: string;
@@ -160,89 +160,8 @@ const ContactForm: React.FC = () => {
       </div>
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {/* Step 1: Basic Information */}
+        {/* Step 1: What happened (Previously Step 2 - First part) */}
         {currentStep === 1 && (
-          <>
-            <div>
-              <label htmlFor="name" className="block mb-1.5 font-medium text-gray-700">
-                Full Name
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="John Doe"
-                  className={`form-input pl-10 ${errors.name ? 'border-red-500 focus:ring-red-500' : ''}`}
-                  {...register('name', { required: 'Name is required' })}
-                />
-              </div>
-              {errors.name && <p className="mt-1.5 text-sm text-red-600">{errors.name.message}</p>}
-            </div>
-            
-            <div>
-              <label htmlFor="phone" className="block mb-1.5 font-medium text-gray-700">
-                Phone Number
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                  </svg>
-                </div>
-                <input
-                  id="phone"
-                  type="tel"
-                  placeholder="(123) 456-7890"
-                  className={`form-input pl-10 ${errors.phone ? 'border-red-500 focus:ring-red-500' : ''}`}
-                  {...register('phone', { 
-                    required: 'Phone number is required',
-                    pattern: {
-                      value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
-                      message: 'Please enter a valid phone number'
-                    }
-                  })}
-                />
-              </div>
-              {errors.phone && <p className="mt-1.5 text-sm text-red-600">{errors.phone.message}</p>}
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block mb-1.5 font-medium text-gray-700">
-                Email Address
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                </div>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  className={`form-input pl-10 ${errors.email ? 'border-red-500 focus:ring-red-500' : ''}`}
-                  {...register('email', { 
-                    required: 'Email is required',
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Please enter a valid email address'
-                    }
-                  })}
-                />
-              </div>
-              {errors.email && <p className="mt-1.5 text-sm text-red-600">{errors.email.message}</p>}
-            </div>
-          </>
-        )}
-        
-        {/* Step 2: Accident Details */}
-        {currentStep === 2 && (
           <>
             {/* What happened to you? */}
             <div>
@@ -335,7 +254,12 @@ const ContactForm: React.FC = () => {
                 }
               </div>
             </div>
-            
+          </>
+        )}
+      
+        {/* Step 2: More specific details (Previously Step 2 - Second part + Step 3 - First part) */}
+        {currentStep === 2 && (
+          <>
             {/* Were safety protocols followed? */}
             <div>
               <label htmlFor="safetyProtocols" className="block mb-1.5 font-medium text-gray-700">
@@ -365,12 +289,7 @@ const ContactForm: React.FC = () => {
                 </label>
               </div>
             </div>
-          </>
-        )}
-        
-        {/* Step 3: Injuries and Documentation */}
-        {currentStep === 3 && (
-          <>
+          
             {/* What injuries did you suffer? */}
             <div>
               <label htmlFor="injuries" className="block mb-1.5 font-medium text-gray-700">
@@ -415,7 +334,12 @@ const ContactForm: React.FC = () => {
                 </label>
               </div>
             </div>
-            
+          </>
+        )}
+        
+        {/* Step 3: Additional questions and contact information (Previously Step 3 - Second part + Step 1) */}
+        {currentStep === 3 && (
+          <>
             {/* What's your role at the oil field? */}
             <div>
               <label htmlFor="jobRole" className="block mb-1.5 font-medium text-gray-700">
@@ -502,6 +426,87 @@ const ContactForm: React.FC = () => {
                   />
                   <span className="ml-2 text-gray-700">No</span>
                 </label>
+              </div>
+            </div>
+            
+            {/* Contact Information - Moved to last step */}
+            <div className="pt-6 border-t border-gray-200 mt-6">
+              <h4 className="font-medium text-lg mb-4">Your Contact Information</h4>
+              
+              <div>
+                <label htmlFor="name" className="block mb-1.5 font-medium text-gray-700">
+                  Full Name
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="John Doe"
+                    className={`form-input pl-10 ${errors.name ? 'border-red-500 focus:ring-red-500' : ''}`}
+                    {...register('name', { required: 'Name is required' })}
+                  />
+                </div>
+                {errors.name && <p className="mt-1.5 text-sm text-red-600">{errors.name.message}</p>}
+              </div>
+              
+              <div className="mt-4">
+                <label htmlFor="email" className="block mb-1.5 font-medium text-gray-700">
+                  Email Address
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </div>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    className={`form-input pl-10 ${errors.email ? 'border-red-500 focus:ring-red-500' : ''}`}
+                    {...register('email', { 
+                      required: 'Email is required',
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: 'Please enter a valid email address'
+                      }
+                    })}
+                  />
+                </div>
+                {errors.email && <p className="mt-1.5 text-sm text-red-600">{errors.email.message}</p>}
+              </div>
+              
+              <div className="mt-4">
+                <label htmlFor="phone" className="block mb-1.5 font-medium text-gray-700">
+                  Phone Number
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                  </div>
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="(123) 456-7890"
+                    className={`form-input pl-10 ${errors.phone ? 'border-red-500 focus:ring-red-500' : ''}`}
+                    {...register('phone', { 
+                      required: 'Phone number is required',
+                      pattern: {
+                        value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+                        message: 'Please enter a valid phone number'
+                      }
+                    })}
+                  />
+                </div>
+                {errors.phone && <p className="mt-1.5 text-sm text-red-600">{errors.phone.message}</p>}
               </div>
             </div>
           </>
