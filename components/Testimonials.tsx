@@ -6,35 +6,35 @@ const testimonials = [
     quote: "After my accident at the oil rig, I didn't know if I'd ever work again. Their team fought for me and got me a $1.2M settlement that changed my life.",
     name: "Michael R.",
     location: "Midland, TX",
-    image: "/images/oil-field-accidents/worker1.jpg"
+    image: "/images/oil-field-accidents/shutterstock_2299764821.jpg"
   },
   {
     id: 2,
     quote: "When the company tried to blame me for the equipment failure, these attorneys stepped in and proved it wasn't my fault. Got me the compensation I deserved.",
     name: "Robert J.",
     location: "Houston, TX",
-    image: "/images/oil-field-accidents/worker2.jpg"
+    image: "/images/oil-field-accidents/shutterstock_1674620563.jpg"
   },
   {
     id: 3,
     quote: "After my chemical exposure injury, medical bills were piling up. They took my case on a no-win, no-fee basis and won me enough to cover all my treatments.",
     name: "James L.",
     location: "Odessa, TX",
-    image: "/images/oil-field-accidents/worker3.jpg"
+    image: "/images/oil-field-accidents/shutterstock_2233075297.jpg"
   },
   {
     id: 4,
     quote: "My family was worried about how we'd make ends meet after my drilling accident. This firm took care of everything so I could focus on healing.",
     name: "Carlos M.",
     location: "San Antonio, TX",
-    image: "/images/oil-field-accidents/worker4.jpg"
+    image: "/images/oil-field-accidents/shutterstock_312884789.jpg"
   },
   {
     id: 5,
     quote: "After 15 years on oil rigs, I never thought I'd be injured. When it happened, this team was by my side from day one and fought for my rights.",
     name: "David W.",
     location: "Dallas, TX",
-    image: "/images/oil-field-accidents/worker5.jpg"
+    image: "/images/oil-field-accidents/shutterstock_2299764821.jpg"
   }
 ];
 
