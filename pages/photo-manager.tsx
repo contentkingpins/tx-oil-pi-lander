@@ -1,16 +1,10 @@
 import React from 'react';
-import Head from 'next/head';
 import PhotoManager from '../components/PhotoManager';
 import Footer from '../components/Footer';
 
 const PhotoManagerPage: React.FC = () => {
   return (
     <div>
-      <Head>
-        <title>Photo Manager - Texas Oil Field Accident Claims</title>
-        <meta name="description" content="Manage photos for Texas oil field accident claims - upload, categorize, and organize images for case documentation." />
-      </Head>
-
       <div className="bg-neutral-50 min-h-screen">
         <header className="bg-secondary text-white py-4">
           <div className="container">
@@ -38,9 +32,9 @@ const PhotoManagerPage: React.FC = () => {
         <main className="py-12">
           <div className="container">
             <div className="mb-8">
-              <h1 className="heading-lg text-center mb-2">Texas Oil Field Accident Photo Manager</h1>
+              <h1 className="heading-lg text-center mb-2">Texas Oil Field Accident Evidence Manager</h1>
               <p className="text-center text-gray-600 max-w-3xl mx-auto">
-                Upload and manage photos related to Texas oil field accidents for documentation and legal proceedings.
+                Document, organize, and preserve evidence of oil field accidents for maximum legal compensation.
               </p>
             </div>
             
@@ -49,43 +43,43 @@ const PhotoManagerPage: React.FC = () => {
             </div>
             
             <div className="mt-12 bg-white rounded-xl shadow-soft-md p-6 border border-gray-200 max-w-4xl mx-auto">
-              <h2 className="heading-md mb-4">Why Document Oil Field Accidents?</h2>
+              <h2 className="heading-md mb-4">Why Proper Documentation Is Critical</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-primary">For Your Legal Claim</h3>
+                  <h3 className="text-xl font-bold mb-2 text-primary">Maximizing Your Settlement</h3>
                   <p className="text-gray-700 mb-4">
-                    Photographic evidence is crucial for establishing the facts of your accident case. 
-                    Clear photos can show unsafe working conditions, equipment failures, and the extent of injuries.
+                    Texas follows modified comparative negligence laws. With proper evidence, you can establish 
+                    liability and maximize your potential compensation for oil field injuries.
                   </p>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                    <li>Document the accident scene before it changes</li>
-                    <li>Show the equipment or machinery involved</li>
-                    <li>Record any visible safety violations</li>
-                    <li>Capture warning signs that were present (or missing)</li>
+                    <li>Document the accident scene before conditions change</li>
+                    <li>Capture equipment failures and maintenance issues</li>
+                    <li>Record OSHA and safety regulation violations</li>
+                    <li>Preserve evidence of proper or improper training</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-primary">Types of Evidence to Collect</h3>
+                  <h3 className="text-xl font-bold mb-2 text-primary">Critical Evidence Types</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <span className="text-primary text-xl mr-2">✅</span>
-                      <span>Wide shots of the entire accident scene</span>
+                      <span>Full scene documentation from multiple angles</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary text-xl mr-2">✅</span>
-                      <span>Close-ups of specific equipment failures</span>
+                      <span>Close-ups of equipment failures with scale reference</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary text-xl mr-2">✅</span>
-                      <span>Photos of any safety hazards or violations</span>
+                      <span>Absence of warning signs or safety equipment</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary text-xl mr-2">✅</span>
-                      <span>Documentation of personal protective equipment</span>
+                      <span>Environmental conditions affecting safety</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary text-xl mr-2">✅</span>
-                      <span>Weather and environmental conditions</span>
+                      <span>Documentation of injuries and medical treatment</span>
                     </li>
                   </ul>
                 </div>
