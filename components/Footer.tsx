@@ -62,6 +62,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-primary">Wrongful Death</a></li>
               <li><a href="#" className="hover:text-primary">Chemical Exposure</a></li>
               <li><a href="#" className="hover:text-primary">Oilfield Transportation</a></li>
+              <li><a href="/photo-manager" className="hover:text-primary">Photo Manager</a></li>
             </ul>
           </div>
           

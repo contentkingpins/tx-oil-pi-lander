@@ -6,21 +6,35 @@ const testimonials = [
     quote: "After my accident at the oil rig, I didn't know if I'd ever work again. Their team fought for me and got me a $1.2M settlement that changed my life.",
     name: "Michael R.",
     location: "Midland, TX",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+    image: "/images/oil-field-accidents/worker1.jpg"
   },
   {
     id: 2,
     quote: "When the company tried to blame me for the equipment failure, these attorneys stepped in and proved it wasn't my fault. Got me the compensation I deserved.",
-    name: "Sarah T.",
+    name: "Robert J.",
     location: "Houston, TX",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+    image: "/images/oil-field-accidents/worker2.jpg"
   },
   {
     id: 3,
     quote: "After my chemical exposure injury, medical bills were piling up. They took my case on a no-win, no-fee basis and won me enough to cover all my treatments.",
     name: "James L.",
     location: "Odessa, TX",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop"
+    image: "/images/oil-field-accidents/worker3.jpg"
+  },
+  {
+    id: 4,
+    quote: "My family was worried about how we'd make ends meet after my drilling accident. This firm took care of everything so I could focus on healing.",
+    name: "Carlos M.",
+    location: "San Antonio, TX",
+    image: "/images/oil-field-accidents/worker4.jpg"
+  },
+  {
+    id: 5,
+    quote: "After 15 years on oil rigs, I never thought I'd be injured. When it happened, this team was by my side from day one and fought for my rights.",
+    name: "David W.",
+    location: "Dallas, TX",
+    image: "/images/oil-field-accidents/worker5.jpg"
   }
 ];
 
@@ -36,7 +50,7 @@ const Testimonials: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
+          {testimonials.slice(0, 3).map((testimonial) => (
             <div 
               key={testimonial.id} 
               className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
